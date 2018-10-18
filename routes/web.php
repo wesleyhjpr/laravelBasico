@@ -14,15 +14,12 @@
 Route::get('/', function () {
     return view('home');
 });
-//Route::get('/teste/{teste}', function ($teste){
-//   echo $teste;
-//});   
 
 Route::get('usuarios/{slug}', 'UsuarioController@index');
 Route::get('clientes', 'ClientesController@index');
 Route::get('clientes/novo', 'ClientesController@novo');
 Route::post('clientes/salvar', 'ClientesController@salvar');
-Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
+Route::put('clientes/{cliente}/editar', 'ClientesController@editar');
 Route::patch('clientes/{cliente}', 'ClientesController@atualizar');
 Route::delete('clientes/{cliente}', 'ClientesController@deletar');
 

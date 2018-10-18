@@ -38,8 +38,12 @@
                                 <td>{{ $cliente->endereco }}</td>
                                 <td>{{ $cliente->numero }}</td>
                                 <td>
-                                    <a href="/clientes/{{$cliente->id}}/editar" class="btn btn-sm">Editar</a>
+                                    {!! Form::open(['method' => 'PUT', 'url' => '/clientes/'.$cliente->id.'/editar', 'style' => 'display: inline;']) !!}
                                     
+                                    <button type="submit" class="btn btn-sm">Editar  </button>
+                                    
+                                    {!! Form::close() !!}
+
                                     {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' => 'display: inline;']) !!}
                                     
                                     <button type="submit" class="btn btn-sm">Excluir  </button>
